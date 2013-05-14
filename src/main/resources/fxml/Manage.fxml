@@ -7,33 +7,22 @@
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
             prefHeight="400.0" prefWidth="600.0" styleClass="background" xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.xu.fx.ManageController">
-    <children>
-        <MenuBar layoutY="0.0" useSystemMenuBar="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-            <menus>
-                <Menu mnemonicParsing="false" text="文件">
-                    <items>
-                        <MenuItem onAction="#exit" text="关闭">
-                            <accelerator>
-                                <KeyCodeCombination alt="UP" code="F4" control="UP" meta="UP" shift="UP"
-                                                    shortcut="ANY"/>
-                            </accelerator>
-                        </MenuItem>
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="编辑">
-                    <items>
-                        <MenuItem text="删除"/>
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="帮助">
-                    <items>
-                        <MenuItem text="关于"/>
-                    </items>
-                </Menu>
-            </menus>
-        </MenuBar>
-    </children>
     <stylesheets>
         <URL value="@/styles/Login.css"/>
     </stylesheets>
+    <MenuBar layoutY="0.0" useSystemMenuBar="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <Menu mnemonicParsing="false" text="文件">
+            <MenuItem onAction="#exit" text="关闭">
+                <accelerator>
+                    <KeyCodeCombination alt="UP" code="F4" control="UP" meta="UP" shift="UP" shortcut="ANY"/>
+                </accelerator>
+            </MenuItem>
+        </Menu>
+        <Menu mnemonicParsing="false" text="编辑">
+            <MenuItem text="删除"/>
+        </Menu>
+        <Menu mnemonicParsing="false" text="帮助">
+            <MenuItem text="关于"/>
+        </Menu>
+    </MenuBar>
 </AnchorPane>
