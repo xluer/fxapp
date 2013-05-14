@@ -4,25 +4,26 @@
     -fx-font-size: 14px;
     -fx-font-weight: bold;
     -fx-text-fill: #333333;
-    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.5), 0, 0, 0, 1);
 }
+
 .text-field {
     -fx-font-size: 14px;
 }
+
 .button {
     -fx-text-fill: white;
     -fx-font-family: "Microsoft YaHei";
     -fx-font-weight: bold;
     -fx-background-color: linear-gradient(#61a2b1, #2A5058);
-    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 5, 0.0, 0, 1);
 }
 
-.button:hover{
+.button:hover {
     -fx-base: #395bae;
 }
 
 /* Component specific styles */
-
 
 .main-panel {
     -fx-background-image: url("../images/background.jpg");
@@ -31,6 +32,6 @@
 .hello-message {
     -fx-text-fill: #AA0000;
     -fx-font-weight: bold;
-    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.5), 0, 0, 0, 1);
 }
 

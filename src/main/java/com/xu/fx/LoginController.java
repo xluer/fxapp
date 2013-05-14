@@ -31,10 +31,6 @@
  */
 package com.xu.fx;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -43,6 +39,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+
+import java.net.URL;
+import java.util.ResourceBundle;
 
 /**
  * Login Controller.
@@ -61,26 +60,26 @@ public class LoginController extends AnchorPane implements Initializable {
     private MainApp app;
 
 
-    public void setApp(MainApp application){
+    public void setApp(MainApp application) {
         this.app = application;
     }
-    
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         errorMessage.setText("");
         //userId.setPromptText("demo");
         //password.setPromptText("demo");
-        
+
     }
-    
-    
+
+
     public void processLogin(ActionEvent event) {
-        if (app == null){
+        if (app == null) {
             // We are running in isolated FXML, possibly in Scene Builder.
             // NO-OP.
             errorMessage.setText("Hello " + userId.getText());
         } else {
-            if (!app.userLogging(userId.getText(), password.getText())){
+            if (!app.userLogging(userId.getText(), password.getText())) {
                 errorMessage.setText("账号或密码不正确");
             }
         }

@@ -7,13 +7,15 @@ import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class HelloController
-{
+public class HelloController {
     private static final Logger log = LoggerFactory.getLogger(HelloController.class);
 
-    @FXML private TextField firstNameField;
-    @FXML private TextField lastNameField;
-    @FXML private Label messageLabel;
+    @FXML
+    private TextField firstNameField;
+    @FXML
+    private TextField lastNameField;
+    @FXML
+    private Label messageLabel;
 
     public void sayHello() {
 

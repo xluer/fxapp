@@ -64,7 +64,7 @@ public class MainApp extends Application {
 
     private Initializable replaceSceneContent(String fxml) throws Exception {
         FXMLLoader loader = new FXMLLoader();
-        InputStream in = MainApp.class.getResourceAsStream("/fxml/"+fxml);
+        InputStream in = MainApp.class.getResourceAsStream("/fxml/" + fxml);
         loader.setBuilderFactory(new JavaFXBuilderFactory());
         loader.setLocation(MainApp.class.getResource(fxml));
         Pane page;
