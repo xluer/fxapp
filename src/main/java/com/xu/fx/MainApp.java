@@ -14,6 +14,8 @@ import org.slf4j.LoggerFactory;
 import java.io.InputStream;
 
 public class MainApp extends Application {
+    private static final String title = "酒店管理";
+
 
     private static final Logger log = LoggerFactory.getLogger(MainApp.class);
     private Stage stage;
@@ -24,7 +26,7 @@ public class MainApp extends Application {
 
     public void start(Stage stage) throws Exception {
         this.stage = stage;
-        stage.setTitle("酒店管理");
+        stage.setTitle(title);
         stage.setMinWidth(390.0);
         stage.setMinHeight(500.0);
         gotoLogin();
