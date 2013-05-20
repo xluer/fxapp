@@ -3,7 +3,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Font?>
 <?import java.net.URL?>
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
             prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml"
@@ -11,25 +10,23 @@
     <stylesheets>
         <URL value="@/styles/manage2.css"/>
     </stylesheets>
-    <StackPane fx:id="stackPane" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-               AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0">
-        <Label id="label1" text="酒店管理系统" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="33.0">
-            <font>
-                <Font name="Microsoft YaHei" size="22.0"/>
-            </font>
-        </Label>
-    </StackPane>
-    <AnchorPane id="titlePane" prefHeight="25.0" prefWidth="800.0"
-                AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <effect>
-            <DropShadow offsetY="0.5"/>
-        </effect>
-        <Label id="label1" text="酒店管理系统" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="2.0">
-            <font>
-                <Font name="Microsoft YaHei" size="22.0"/>
-            </font>
-        </Label>
-    </AnchorPane>
+    <MenuBar layoutY="0.0" useSystemMenuBar="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <Menu mnemonicParsing="false" text="系统">
+            <MenuItem onAction="#exit" text="退出"/>
+        </Menu>
+        <Menu mnemonicParsing="false" text="客房">
+            <Menu mnemonicParsing="false" text="预订">
+                <MenuItem mnemonicParsing="false" text="查询" onAction="#reserveList"/>
+                <MenuItem mnemonicParsing="false" text="新建" onAction="#newCustomer"/>
+            </Menu>
+        </Menu>
+        <Menu mnemonicParsing="false" text="账单">
+            <MenuItem text="删除"/>
+        </Menu>
+        <Menu mnemonicParsing="false" text="帮助">
+            <MenuItem text="关于"/>
+        </Menu>
+    </MenuBar>
     <AnchorPane prefHeight="450.0" prefWidth="200.0"
                 AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="45.0">
         <effect>
@@ -39,10 +36,10 @@
               AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
               AnchorPane.topAnchor="10.0">
             <Button id="button1" prefHeight="50.0" prefWidth="150.0" text="预订管理" onAction="#reserveList"/>
-            <Button id="button1" prefHeight="50.0" prefWidth="150.0" text="班级管理" onAction="#testPop"/>
-            <Button id="button1" prefHeight="50.0" prefWidth="150.0" text="课程管理"/>
-            <Button id="button1" prefHeight="50.0" prefWidth="150.0" text="教师管理"/>
-            <Button id="button1" prefHeight="50.0" prefWidth="150.0" text="选课管理"/>
+            <Button id="button1" prefHeight="50.0" prefWidth="150.0" text="管理" onAction="#testPop"/>
+            <Button id="button1" prefHeight="50.0" prefWidth="150.0" text="管理"/>
+            <Button id="button1" prefHeight="50.0" prefWidth="150.0" text="管理"/>
+            <Button id="button1" prefHeight="50.0" prefWidth="150.0" text="管理"/>
         </VBox>
     </AnchorPane>
     <AnchorPane id="anchorPane3" fx:id="central_panel" prefHeight="450.0" prefWidth="600.0"
