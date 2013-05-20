@@ -20,10 +20,10 @@
         <TextField id="textField1" prefHeight="20.0" prefWidth="200.0"
                    promptText="请输入单号或姓名开始查询"/>
 
-        <Button id="button1" maxHeight="-Infinity" prefHeight="10.0" text="添加学生"/>
-        <Button id="button1" maxHeight="-Infinity" prefHeight="10.0" text="修改学生"/>
-        <Button id="button1" maxHeight="-Infinity" prefHeight="10.0" text="删除学生"/>
-        <Button id="button1" defaultButton="true" maxHeight="-Infinity" prefHeight="10.0" text="成绩统计"/>
+        <Button id="button1" defaultButton="true" maxHeight="-Infinity" prefHeight="10.0" text="查询"/>
+        <Button id="button1" maxHeight="-Infinity" prefHeight="10.0" text="添加"/>
+        <Button id="button1" maxHeight="-Infinity" prefHeight="10.0" text="修改"/>
+        <Button id="button1" maxHeight="-Infinity" prefHeight="10.0" text="删除"/>
     </HBox>
     <AnchorPane prefHeight="341.0" prefWidth="572.0"
                 AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0"
@@ -33,7 +33,7 @@
             <columns>
                 <TableColumn prefWidth="75.0" text="宾客">
                     <cellValueFactory>
-                        <PropertyValueFactory property="customerId"/>
+                        <PropertyValueFactory property="customerName"/>
                     </cellValueFactory>
                 </TableColumn>
                 <TableColumn prefWidth="75.0" text="房间">
