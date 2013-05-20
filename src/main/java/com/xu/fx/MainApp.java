@@ -79,6 +79,7 @@ public class MainApp extends Application {
         stage.setScene(scene);
         stage.sizeToScene();
         stage.getScene().getStylesheets().add("/styles/menu.css");
+        stage.getScene().getStylesheets().add("/styles/calendar_styles.css");
         return loader.getController();
     }
 }
