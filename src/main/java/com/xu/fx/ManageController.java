@@ -21,7 +21,6 @@ import java.util.ResourceBundle;
 public class ManageController implements Initializable {
 
     private Logger logger = LoggerFactory.getLogger(ManageController.class);
-    public StackPane stackPane;
     private MainApp application;
     private AnchorPane curPane;
     @FXML
@@ -63,12 +62,12 @@ public class ManageController implements Initializable {
         Stage stage = new Stage();
         Parent root = null;
         try {
-            root = FXMLLoader.load(MainApp.class.getResource("/fxml/Login.fxml"));
+            root = FXMLLoader.load(MainApp.class.getResource("/fxml/AllInfo.fxml"));
         } catch (IOException e) {
             logger.error("io err", e);
         }
         stage.setScene(new Scene(root));
-        stage.setTitle("My modal window");
+        stage.setTitle("");
         stage.initModality(Modality.WINDOW_MODAL);
         stage.initOwner(((Node) actionEvent.getSource()).getScene().getWindow());
         stage.show();
