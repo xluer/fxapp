@@ -55,7 +55,7 @@ public class ManageController implements Initializable {
     }
 
     public void newCustomer() {
-        changePane("CustomerInfo");
+        changePane("AllInfo");
     }
 
     public void testPop(ActionEvent actionEvent) {

@@ -10,7 +10,7 @@
     <stylesheets>
         <URL value="@/styles/manage2.css"/>
     </stylesheets>
-    <MenuBar layoutY="0.0" useSystemMenuBar="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+    <MenuBar prefHeight="20.0" layoutY="0.0" useSystemMenuBar="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <Menu mnemonicParsing="false" text="系统">
             <MenuItem onAction="#exit" text="退出"/>
         </Menu>
@@ -27,7 +27,7 @@
             <MenuItem text="关于"/>
         </Menu>
     </MenuBar>
-    <AnchorPane prefHeight="450.0" prefWidth="200.0"
+    <!--AnchorPane prefHeight="450.0" prefWidth="200.0"
                 AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="45.0">
         <effect>
             <DropShadow offsetX="1.0" offsetY="5.0"/>
@@ -41,9 +41,9 @@
             <Button id="button1" prefHeight="50.0" prefWidth="150.0" text="管理"/>
             <Button id="button1" prefHeight="50.0" prefWidth="150.0" text="管理"/>
         </VBox>
-    </AnchorPane>
+    </AnchorPane-->
     <AnchorPane id="anchorPane3" fx:id="central_panel" prefHeight="450.0" prefWidth="600.0"
-                AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0"
-                AnchorPane.topAnchor="45.0"/>
+                AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                AnchorPane.topAnchor="20.0"/>
 
 </AnchorPane>
