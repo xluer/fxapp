@@ -10,7 +10,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.List;
 
-import static com.xu.util.DbConfig.*;
+import static com.xu.util.DBConfig.*;
 
 public class RoomHistoryDao {
 

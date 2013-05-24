@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.xu.util.DbConfig.*;
+import static com.xu.util.DBConfig.*;
 
 public class CustomerDao {
     private static BeanListHandler<Customer> hdr = new BeanListHandler<>(Customer.class);

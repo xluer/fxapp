@@ -32,5 +32,5 @@
     </MenuBar>
     <AnchorPane fx:id="central_panel" prefHeight="450.0" prefWidth="600.0"
                 AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0"
-                AnchorPane.topAnchor="34.0"/>
+                AnchorPane.topAnchor="36.0"/>
 </AnchorPane>
