@@ -5,8 +5,12 @@ import net.sourceforge.pinyin4j.format.HanyuPinyinCaseType;
 import net.sourceforge.pinyin4j.format.HanyuPinyinOutputFormat;
 import net.sourceforge.pinyin4j.format.HanyuPinyinToneType;
 import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Cn2Spell {
+    static Logger logger = LoggerFactory.getLogger(Cn2Spell.class);
+
     /**
      * 汉字转换位汉语拼音首字母，英文字符不变
      *
@@ -16,20 +20,18 @@ public class Cn2Spell {
     public static String converterToFirstSpell(String chines) {
         String pinyinName = "";
         char[] nameChar = chines.toCharArray();
-        HanyuPinyinOutputFormat defaultFormat = new HanyuPinyinOutputFormat();
-        defaultFormat.setCaseType(HanyuPinyinCaseType.LOWERCASE);
-        defaultFormat.setToneType(HanyuPinyinToneType.WITHOUT_TONE);
-        for (int i = 0; i < nameChar.length; i++) {
-            if (nameChar[i] > 128) {
-
+        HanyuPinyinOutputFormat df = new HanyuPinyinOutputFormat();
+        df.setCaseType(HanyuPinyinCaseType.LOWERCASE);
+        df.setToneType(HanyuPinyinToneType.WITHOUT_TONE);
+        for (char aChar : nameChar) {
+            if (aChar > 128) {
                 try {
-                    pinyinName += PinyinHelper.toHanyuPinyinStringArray(nameChar[i], defaultFormat)[0].charAt(0);
-                } catch (BadHanyuPinyinOutputFormatCombination badHanyuPinyinOutputFormatCombination) {
-                    badHanyuPinyinOutputFormatCombination.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    pinyinName += PinyinHelper.toHanyuPinyinStringArray(aChar, df)[0].charAt(0);
+                } catch (BadHanyuPinyinOutputFormatCombination e) {
+                    logger.error("Pinyin format err", e);
                 }
-
             } else {
-                pinyinName += nameChar[i];
+                pinyinName += aChar;
             }
         }
         return pinyinName;
@@ -47,21 +49,17 @@ public class Cn2Spell {
         HanyuPinyinOutputFormat defaultFormat = new HanyuPinyinOutputFormat();
         defaultFormat.setCaseType(HanyuPinyinCaseType.LOWERCASE);
         defaultFormat.setToneType(HanyuPinyinToneType.WITHOUT_TONE);
-        for (int i = 0; i < nameChar.length; i++) {
-            if (nameChar[i] > 128) {
+        for (char aNameChar : nameChar) {
+            if (aNameChar > 128) {
                 try {
-                    pinyinName += PinyinHelper.toHanyuPinyinStringArray(nameChar[i], defaultFormat)[0];
+                    pinyinName += PinyinHelper.toHanyuPinyinStringArray(aNameChar, defaultFormat)[0];
                 } catch (BadHanyuPinyinOutputFormatCombination e) {
                     e.printStackTrace();
                 }
             } else {
-                pinyinName += nameChar[i];
+                pinyinName += aNameChar;
             }
         }
         return pinyinName;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(converterToFirstSpell("欢迎来到最棒的Java中文社区"));
     }
 }
