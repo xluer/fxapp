@@ -4,6 +4,7 @@ public class Customer {
     private Long id;
     private String name;
     private String idcard;
+    private String nameSpell;
 
     public Long getId() {
         return id;
@@ -27,5 +28,13 @@ public class Customer {
 
     public void setIdcard(String idcard) {
         this.idcard = idcard;
+    }
+
+    public String getNameSpell() {
+        return nameSpell;
+    }
+
+    public void setNameSpell(String nameSpell) {
+        this.nameSpell = nameSpell;
     }
 }

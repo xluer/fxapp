@@ -9,6 +9,7 @@ public class RoomHistory {
     private Long roomTypeId;
     private Date startTime;
     private Date endTime;
+    private Integer state;
 
     public Long getId() {
         return id;
@@ -56,5 +57,13 @@ public class RoomHistory {
 
     public void setEndTime(Date endTime) {
         this.endTime = endTime;
+    }
+
+    public Integer getState() {
+        return state;
+    }
+
+    public void setState(Integer state) {
+        this.state = state;
     }
 }

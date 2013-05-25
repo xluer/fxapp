@@ -78,7 +78,7 @@ public class MainApp extends Application {
         Scene scene = new Scene(page, width, height);
         stage.setScene(scene);
         stage.sizeToScene();
-        stage.getScene().getStylesheets().add("/styles/calendar_styles.css");
+        stage.getScene().getStylesheets().add("/styles/DatePicker.css");
         //stage.getScene().getStylesheets().add("/styles/menu.css");
         return loader.getController();
     }

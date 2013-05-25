@@ -443,7 +443,7 @@ public class FXCalendar extends HBox {
 		}
 
 		public void updateItem(String item) {
-			setText(item != null ? item.toString() : "");
+			setText(item != null ? item : "");
 		}
 	}
 

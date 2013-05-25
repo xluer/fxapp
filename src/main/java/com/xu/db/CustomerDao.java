@@ -27,4 +27,15 @@ public class CustomerDao {
             DbUtils.close(con);
         }
     }
+
+    public static void save(Customer c) throws SQLException {
+        QueryRunner run = new QueryRunner(DBManager.getDataSource());
+        if (c.getId() == null) {
+            run.update("INSERT INTO `customer` (`name`, `idcard`, `nameSpell`) VALUES (?,?,?)", c.getName(),
+                    c.getIdcard(), c.getNameSpell());
+        } else {
+            run.update("UPDATE `customer` SET name=?,idcard=?,nameSpell=? WHERE id=?", c.getName(), c.getIdcard(),
+                    c.getNameSpell(), c.getId());
+        }
+    }
 }

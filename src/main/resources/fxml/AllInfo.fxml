@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import eu.schudt.javafx.controls.calendar.DatePicker?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.*?>
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
             prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
             AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns:fx="http://javafx.com/fxml"
@@ -36,8 +37,7 @@
                             <RowConstraints prefHeight="29.0" vgrow="SOMETIMES"/>
                             <RowConstraints maxHeight="-1.0" minHeight="-1.0" prefHeight="-1.0" vgrow="ALWAYS"/>
                         </rowConstraints>
-                        <Label alignment="CENTER_LEFT" text="姓名" GridPane.columnIndex="0"
-                               GridPane.rowIndex="0"/>
+                        <Label text="姓名" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
                         <Label text="别名" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
                         <Label text="性别" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
                         <Label text="国籍" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
@@ -46,12 +46,11 @@
                         <Label text="生日" GridPane.columnIndex="4" GridPane.rowIndex="0"/>
                         <Label text="民族" GridPane.columnIndex="4" GridPane.rowIndex="1"/>
                         <Label text="地址" GridPane.columnIndex="4" GridPane.rowIndex="2"/>
-                        <TextField fx:id="name" prefWidth="200.0" GridPane.columnIndex="1"
-                                   GridPane.rowIndex="0"/>
+                        <TextField fx:id="name" onAction="#sch" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
                         <TextField prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
                         <TextField prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
                         <TextField prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
-                        <TextField fx:id="idcard" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+                        <TextField fx:id="idCard" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
                         <TextField prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="0"/>
                         <TextField prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="1"/>
                         <TextField prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="2"/>
@@ -88,15 +87,15 @@
                         </TableView>
                         <Label text="历史宾客记录" GridPane.columnIndex="0" GridPane.columnSpan="2"
                                GridPane.halignment="CENTER" GridPane.rowIndex="4"/>
-                        <Button text="查询" onAction="#sch" GridPane.columnIndex="3"
-                                GridPane.halignment="CENTER" GridPane.rowIndex="4"
-                                GridPane.valignment="CENTER"/>
-                        <Button text="填单" onAction="#fillCustomer" GridPane.columnIndex="4"
-                                GridPane.halignment="CENTER" GridPane.rowIndex="4"
-                                GridPane.valignment="CENTER"/>
-                        <Button text="保存" GridPane.columnIndex="5"
+                        <Button text="查询历史" onAction="#sch" GridPane.columnIndex="3"
                                 GridPane.halignment="CENTER" GridPane.rowIndex="4"
                                 GridPane.valignment="CENTER" defaultButton="true"/>
+                        <Button text="快速填单" onAction="#fillCustomer" GridPane.columnIndex="4"
+                                GridPane.halignment="CENTER" GridPane.rowIndex="4"
+                                GridPane.valignment="CENTER"/>
+                        <Button text="保存信息" onAction="#saveCustomer" GridPane.columnIndex="5"
+                                GridPane.halignment="CENTER" GridPane.rowIndex="4"
+                                GridPane.valignment="CENTER"/>
                     </GridPane>
                 </AnchorPane>
             </TitledPane>
@@ -109,14 +108,14 @@
                               AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                         <columnConstraints>
                             <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="10.0"
-                                               prefWidth="50.0"/>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0"/>
+                                               prefWidth="80.0"/>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0"/>
                             <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="10.0"
-                                               prefWidth="50.0"/>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0"/>
+                                               prefWidth="80.0"/>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0"/>
                             <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="10.0"
-                                               prefWidth="50.0"/>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0"/>
+                                               prefWidth="80.0"/>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0"/>
                         </columnConstraints>
                         <rowConstraints>
                             <RowConstraints maxHeight="28.0" minHeight="10.0" prefHeight="28.0"
@@ -131,30 +130,27 @@
                             <RowConstraints minHeight="10.0" prefHeight="29.0" vgrow="ALWAYS"/>
                             <RowConstraints maxHeight="-1.0" minHeight="10.0" prefHeight="-1.0" vgrow="ALWAYS"/>
                         </rowConstraints>
-                        <Label alignment="CENTER_LEFT" text="到店时间" GridPane.columnIndex="0"
-                               GridPane.rowIndex="0"/>
+                        <Label text="到店时间" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
                         <Label text="离店时间" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-                        <Label text="房间定价" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
-                        <Label text="折扣" GridPane.columnIndex="4" GridPane.rowIndex="0"/>
-                        <TextField prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
-                        <TextField prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-                        <TextField prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
-                        <TextField prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="0"/>
-                        <Label text="房型" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-                        <TextField prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="2"/>
-                        <Label text="房间号" GridPane.columnIndex="4" GridPane.rowIndex="2"/>
-                        <Label text="房间数" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
-                        <TextField prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+                        <Label text="备注" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
                         <Label text="实际房价" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
                         <Label text="早餐" GridPane.columnIndex="4" GridPane.rowIndex="1"/>
-                        <TextField prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
-                        <TextField prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="1"/>
-                        <TextField prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-                        <Label text="备注" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
-                        <TextField prefWidth="200.0" GridPane.columnIndex="1"
-                                   GridPane.columnSpan="2147483647" GridPane.rowIndex="3"/>
-                        <TableView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="0"
-                                   GridPane.columnSpan="2147483647" GridPane.rowIndex="6">
+                        <Label text="房间定价" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                        <Label text="折扣" GridPane.columnIndex="4" GridPane.rowIndex="0"/>
+                        <Label text="房间号" GridPane.columnIndex="4" GridPane.rowIndex="2"/>
+                        <Label text="房间数" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+                        <Label text="房型" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                        <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="0" fx:id="startDate"/>
+                        <TextField GridPane.columnIndex="3" GridPane.rowIndex="0" prefWidth="200"/>
+                        <TextField GridPane.columnIndex="5" GridPane.rowIndex="0" prefWidth="200"/>
+                        <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="endDate"/>
+                        <TextField GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+                        <TextField GridPane.columnIndex="5" GridPane.rowIndex="1"/>
+                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                        <TextField GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+                        <TextField GridPane.columnIndex="5" GridPane.rowIndex="2"/>
+                        <TextField GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="3"/>
+                        <TableView GridPane.columnIndex="0" GridPane.columnSpan="2147483647" GridPane.rowIndex="6">
                             <columns>
                                 <TableColumn prefWidth="75.0" text="客户姓名"/>
                                 <TableColumn prefWidth="75.0" text="到店时间"/>
@@ -167,10 +163,10 @@
                         </TableView>
                         <Label text="宾客历史订单" GridPane.columnIndex="0" GridPane.columnSpan="2"
                                GridPane.rowIndex="5"/>
-                        <Button text="填单" GridPane.columnIndex="3"
+                        <Button text="快速填单" GridPane.columnIndex="3"
                                 GridPane.halignment="CENTER" GridPane.rowIndex="5"
                                 GridPane.valignment="CENTER"/>
-                        <Button text="保存" GridPane.columnIndex="5"
+                        <Button text="保存订单" onAction="#saveReserve" GridPane.columnIndex="5"
                                 GridPane.halignment="CENTER" GridPane.rowIndex="5"
                                 GridPane.valignment="CENTER" defaultButton="true"/>
                     </GridPane>

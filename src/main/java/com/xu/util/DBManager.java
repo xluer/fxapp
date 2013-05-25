@@ -54,6 +54,10 @@ public class DBManager {
         }
     }
 
+    public static DataSource getDataSource() {
+        return dataSource;
+    }
+
     /**
      * 断开连接池
      */

@@ -1,11 +1,14 @@
 package com.xu.fx;
 
 import com.xu.db.CustomerDao;
+import com.xu.db.RoomHistoryDao;
 import com.xu.model.Customer;
+import com.xu.model.RoomReserve;
+import eu.schudt.javafx.controls.calendar.DatePicker;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -17,17 +20,32 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class AllInfoController implements Initializable {
-    @FXML
-    public TextField idcard;
-    Logger log = LoggerFactory.getLogger(AllInfoController.class);
-    @FXML
+
+    public TextField idCard;
     public TextField name;
-    @FXML
     public TableView<Customer> userList;
+    public DatePicker startDate;
+    public DatePicker endDate;
+
+    private Customer curCustomer = new Customer();
+    private RoomReserve curReserve = new RoomReserve();
+
+    Logger log = LoggerFactory.getLogger(AllInfoController.class);
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        name.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String oldVal, String newVal) {
+                curCustomer.setName(newVal);
+            }
+        });
+        idCard.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String oldVal, String newVal) {
+                curCustomer.setIdcard(newVal);
+            }
+        });
     }
 
     public void sch() {
@@ -37,15 +55,37 @@ public class AllInfoController implements Initializable {
             );
             userList.setItems(data);
         } catch (SQLException e) {
-            log.error("db drr", e);
+            log.error("db err", e);
         }
     }
 
     public void fillCustomer() {
         Customer c = userList.getSelectionModel().getSelectedItem();
-        if(c!=null){
+        if (c != null) {
+            curCustomer = c;
+            curReserve.setCustomerId(c.getId());
             name.setText(c.getName());
-            idcard.setText(c.getIdcard());
+            idCard.setText(c.getIdcard());
+        }
+    }
+
+    public void saveCustomer() {
+        try {
+            CustomerDao.save(curCustomer);
+            curReserve.setCustomerId(curReserve.getId());
+        } catch (SQLException e) {
+            log.error("saveCustomer fail", e);
+        }
+    }
+
+    public void saveReserve() {
+        try {
+            curReserve.setStartTime(startDate.getSelectedDate());
+            curReserve.setEndTime(endDate.getSelectedDate());
+            curReserve.setState(0);
+            RoomHistoryDao.saveReserve(curReserve);
+        } catch (SQLException e) {
+            log.error("saveReserve fail", e);
         }
     }
 }
