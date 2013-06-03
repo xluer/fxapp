@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.*?>
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="400.0" prefWidth="600.0" styleClass="background" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.xu.fx.ManageController">
+    <!--   <stylesheets>
+          <URL value="@/styles/Login.css"/>
+      </stylesheets>             -->
+    <MenuBar layoutY="0.0" useSystemMenuBar="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <Menu mnemonicParsing="false" text="系统">
+            <MenuItem onAction="#exit" text="退出"/>
+        </Menu>
+        <Menu mnemonicParsing="false" text="客房">
+            <Menu mnemonicParsing="false" text="预订">
+                <MenuItem mnemonicParsing="false" text="查询" onAction="#reserveList"/>
+                <MenuItem mnemonicParsing="false" text="新建" onAction="#newCustomer"/>
+            </Menu>
+        </Menu>
+        <Menu mnemonicParsing="false" text="账单">
+            <MenuItem text="删除"/>
+        </Menu>
+        <Menu mnemonicParsing="false" text="帮助">
+            <MenuItem text="关于">
+                <accelerator>
+                    <KeyCodeCombination alt="UP" code="F4" control="UP" meta="UP" shift="UP" shortcut="ANY"/>
+                </accelerator>
+            </MenuItem>
+        </Menu>
+    </MenuBar>
+    <AnchorPane fx:id="central_panel" prefHeight="450.0" prefWidth="600.0"
+                AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0"
+                AnchorPane.topAnchor="36.0"/>
+</AnchorPane>
