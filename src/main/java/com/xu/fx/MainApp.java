@@ -16,8 +16,8 @@ import java.io.InputStream;
 
 public class MainApp extends Application {
     private static final String title = "酒店管理";
-    private static final double width = 800.0;
-    private static final double height = 600.0;
+    private static final double width = 1024.0;
+    private static final double height = 768.0;
 
     private static final Logger log = LoggerFactory.getLogger(MainApp.class);
     private Stage stage;

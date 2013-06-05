@@ -11,6 +11,7 @@
       </stylesheets>             -->
     <MenuBar layoutY="0.0" useSystemMenuBar="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <Menu mnemonicParsing="false" text="系统">
+            <MenuItem text="客房管理"/>
             <MenuItem onAction="#exit" text="退出"/>
         </Menu>
         <Menu mnemonicParsing="false" text="客房">

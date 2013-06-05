@@ -9,6 +9,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -21,10 +22,15 @@ import java.util.ResourceBundle;
 
 public class AllInfoController implements Initializable {
 
+    @FXML
     public TextField idCard;
+    @FXML
     public TextField name;
+    @FXML
     public TableView<Customer> userList;
+    @FXML
     public DatePicker startDate;
+    @FXML
     public DatePicker endDate;
 
     private Customer curCustomer = new Customer();

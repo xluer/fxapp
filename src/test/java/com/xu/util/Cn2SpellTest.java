@@ -14,4 +14,10 @@ public class Cn2SpellTest {
     public void testConverterToFirstSpell() {
         assertEquals("hypinyin", Cn2Spell.converterToFirstSpell("汉语pinyin"));
     }
+
+    @Test
+    public void testMultiSpell(){
+        assertEquals("chongqing",Cn2Spell.converterToSpell("重庆"));
+        //assertEquals("zhongliang",Cn2Spell.converterToSpell("重量"));
+    }
 }

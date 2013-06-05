@@ -21,9 +21,10 @@
                    promptText="请输入单号或姓名开始查询"/>
 
         <Button id="button1" defaultButton="true" maxHeight="-Infinity" prefHeight="10.0" text="查询"/>
+        <!--
         <Button id="button1" maxHeight="-Infinity" prefHeight="10.0" text="添加"/>
         <Button id="button1" maxHeight="-Infinity" prefHeight="10.0" text="修改"/>
-        <Button id="button1" maxHeight="-Infinity" prefHeight="10.0" text="删除"/>
+        <Button id="button1" maxHeight="-Infinity" prefHeight="10.0" text="删除"/>-->
     </HBox>
     <AnchorPane prefHeight="341.0" prefWidth="572.0"
                 AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0"
@@ -34,6 +35,16 @@
                 <TableColumn prefWidth="75.0" text="宾客">
                     <cellValueFactory>
                         <PropertyValueFactory property="customerName"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="80.0" text="到店日期">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="startTime"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="80.0" text="离店日期">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="endTime"/>
                     </cellValueFactory>
                 </TableColumn>
                 <TableColumn prefWidth="75.0" text="房间">
